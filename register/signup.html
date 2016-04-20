@@ -19,8 +19,8 @@
 
   <div>
     <label for=passion>What would you like to teach?</label>
-    <input type="text" name="passion"/>
-    <div>Button Shit</div>
+    <input name="passion" list="suggestions"/>
+    <datalist id="suggestions"></datalist>
   </div>
 
   <div>
@@ -41,3 +41,14 @@
     <button tag="A" type="button">Register!</button>
 
 </form>
+
+<script type="text/javascript">
+  var sugg = ['Computers', 'Economics', 'Horticulture', 'Finance', 'Geology', 'Chemistry', 'Design']
+
+  var options = '';
+
+  for(var i = 0; i < sugg.length; i++)
+    options += '<option value="'+sugg[i]+'" />';
+
+  document.getElementById("suggestions").innerHTML = options;
+</script>
