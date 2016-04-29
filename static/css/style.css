@@ -24,12 +24,16 @@ nav {
   align-items: center;
   padding: 0 3% 0 5%; }
   nav .logos {
+    cursor: pointer;
     display: flex;
     align-items: center; }
     nav .logos img {
       height: 5.5vh; }
     nav .logos span {
       padding-left: 5%; }
+  nav svg {
+    display: inline;
+    width: 1.5em; }
   nav ul {
     text-align: right;
     width: 100%;
@@ -148,5 +152,23 @@ nav.min {
       #view .ui-datepicker-inline .ui-datepicker-calendar .ui-state-highlight a {
         background: #607D8B;
         color: white; }
+
+.sidebar {
+  background-color: #607D8B;
+  color: white;
+  height: 92vh;
+  width: 20%;
+  position: relative; }
+  .sidebar ul {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    list-style: none;
+    margin: 0; }
+    .sidebar ul a {
+      width: 100%;
+      display: block;
+      padding: 5%;
+      color: white; }
 
 /*# sourceMappingURL=style.css.map */

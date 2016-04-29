@@ -34,6 +34,7 @@ nav {
     padding: 0 3% 0 5%;
     
     .logos {
+        cursor: pointer;
         display: flex;
         align-items: center;
         img {
@@ -43,6 +44,11 @@ nav {
             @extend .brand;
             padding-left: 5%;
         }
+    }
+    
+    svg {
+        display: inline;
+        width: 1.5em;
     }
     
     ul {
@@ -210,7 +216,29 @@ nav.min {
                 color: white;
             }
         }
-        
     }
-   
+}
+
+.sidebar {
+    background-color: $my-grey;
+    color: white;
+    height: 92vh;
+    width: 20%;
+    position: relative;
+    
+    ul {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        a {
+            width: 100%;
+            display: block;
+            padding: 5%;
+            color: white;
+        }
+    }
+    
+    
 }
