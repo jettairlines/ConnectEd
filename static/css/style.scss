@@ -24,6 +24,8 @@ a, a:hover {
 }
 
 nav {
+    z-index: 3;
+    position: relative;
     text-transform: capitalize;
     color: black;
     height: 8vh;
@@ -228,17 +230,44 @@ nav.min {
     
     ul {
         position: absolute;
-        top: 30%;
+        top: 10%;
         width: 100%;
         list-style: none;
         margin: 0;
+        padding: 0;
+        
+        .active {
+            background: $my-blue;
+        }
+        
         a {
             width: 100%;
             display: block;
-            padding: 5%;
+            padding: 10%;
             color: white;
+            border: 1px solid rgba(0,0,0,0.2);
+            
+
+            
+            &:hover {
+                background: $my-blue;
+            }       
         }
     }
+}
+
+#view2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 92vh;
+    background: $my-litegrey;
     
-    
+    > div {
+        display: flex;
+        justify-content: space-around;
+        
+        h5 { float: left; }
+    }
 }

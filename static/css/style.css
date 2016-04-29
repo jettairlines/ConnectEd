@@ -15,6 +15,8 @@ a, a:hover {
   color: #607D8B; }
 
 nav {
+  z-index: 3;
+  position: relative;
   text-transform: capitalize;
   color: black;
   height: 8vh;
@@ -161,14 +163,33 @@ nav.min {
   position: relative; }
   .sidebar ul {
     position: absolute;
-    top: 30%;
+    top: 10%;
     width: 100%;
     list-style: none;
-    margin: 0; }
+    margin: 0;
+    padding: 0; }
+    .sidebar ul .active {
+      background: #B3E5FC; }
     .sidebar ul a {
       width: 100%;
       display: block;
-      padding: 5%;
-      color: white; }
+      padding: 10%;
+      color: white;
+      border: 1px solid rgba(0, 0, 0, 0.2); }
+      .sidebar ul a:hover {
+        background: #B3E5FC; }
+
+#view2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 92vh;
+  background: #D8D8D8; }
+  #view2 > div {
+    display: flex;
+    justify-content: space-around; }
+    #view2 > div h5 {
+      float: left; }
 
 /*# sourceMappingURL=style.css.map */
