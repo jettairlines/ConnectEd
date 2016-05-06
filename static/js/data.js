@@ -1,4 +1,4 @@
-var people =
+var people = [
 {"name": "Grant Everett", "company": "Splunk","time": "Afternoon", "subject": "Economics"},
 {"name": "Jett Want", "company": "ConnectED","time": "Morning", "subject": "Economics"},
 {"name": "Mayank Mehta", "company": "Destroyer Inc","time": "Afternoon", "subject": "Economics"},
@@ -11,3 +11,4 @@ var people =
 {"name": "Sonya Khan", "company": "Hackathon Dweebs","time": "Evening", "subject": "Engineering"},
 {"name": "Guru Bharma", "company": "Senheiser","time": "Afternoon", "subject": "Engineering"},
 {"name": "Easy Moni", "company": "NoCreativ","time": "Morning", "subject": "Engineering"},
+]
