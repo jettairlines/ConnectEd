@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>ConnectEd</title>
+	<title>ConnectEd School</title>
 	<link rel="icon" href="/static/img/logo_b.svg" type="image/svg+xml">
 
 	<!-- CSS -->
@@ -23,24 +23,45 @@
     
     <div class="sidebar">
         <ul>
-            <li><a class="active">Browse Volunteers</a></li>
-            <li><a>Manage Volunteers</a></li>
-            <li><a>School Information</a></li>
+            <li><a class="active" href="#">Browse Volunteers</a></li>
+            <li><a href="#">Manage Volunteers</a></li>
+            <li><a href="#">School Information</a></li>
         </ul>
     </div>
     
     <div id="view2">
-        <h4>Filter</h4>
         <div>
-            <div><h5>Class</h5><button>+</button></div>
-            <div><h5>Time</h5><button>+</button></div>
+            <h4>Filter</h4>
+            <div id="select">
+                <div><h5>Class</h5><button>+</button></div>
+                <div><h5>Time</h5><button>+</button></div>
+            </div>
+            <div id="content">
+                <div class="person"><p>Guru Bharma</p><p>Google</p></div>
+                <div class="person"><p>Grant Everett</p><p>Splunk</p></div>
+                <div class="person"><p>Jett Wang</p><p>Pokemon Inc</p></div>
+                <div class="person"><p>Mayank Mehta</p><p>Universal Studios</p></div>
+                <div class="person"><p>Sonya Khan</p><p>Riot Games</p></div>
+                <div class="person"><p>Cinda Heeren</p><p>University of Illinois</p></div>
+                <div class="person"><p>Donald Trump</p><p>Trump Organization</p></div>
+                <div class="person"><p>Hillary Clinton</p><p>Wall Street</p></div>
+                <div class="person"><p>Bernie Sanders</p><p>The People</p></div>
+                <div class="person"><p>Ted Cruz</p><p>Zodiac</p></div>
+                <div class="person"><p>Pepe Frog</p><p>Reddit</p></div>
+                <div class="person"><p>Dat Boi</p><p>Waddup</p></div>
+                <div class="person"><p>Bob Minion</p><p>Minion Inc</p></div>
+            </div>
         </div>
-        <div id="content"></div>
         
     </div>
     
-        
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="/static/js/jquery-ui.multidatespicker.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script  type="text/javascript" src="/static/js/jquery-ui.multidatespicker.js"></script>
+    
+    <script type="text/javascript">
+        $(".logos").bind('click',function(){location.reload();});
+        $(".person").bind('click',function(){$(this).toggleClass("active");});
+    </script>
     
 </body>
