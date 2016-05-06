@@ -35,7 +35,7 @@
             <div id="select">
 							<div class="classes">
 								<label for='classDropdown'>Class</label>
-							  <button onclick="myFunction()" class="dropbtn">+</button>
+							  <button onclick="classFunction()" class="dropbtn">+</button>
 							  <div id="classDropdown" class="dropdown-content">
 							    <a href="#">Economics</a>
 							    <a href="#">Law</a>
@@ -45,7 +45,7 @@
 							<div id="select">
 								<div class="times">
 									<label for='timeDropdown'>Time</label>
-								  <button onclick="myFunction()" class="dropbtn">+</button>
+								  <button onclick="timeFunction()" class="dropbtn">+</button>
 								  <div id="timeDropdown" class="dropdown-content">
 								    <a href="#">Morning</a>
 								    <a href="#">Afternoon</a>
@@ -53,7 +53,6 @@
 								  </div>
 								</div>
 							</div>
-                <div><h5>Time</h5><button>+</button></div>
             </div>
             <div id="content">
                 
@@ -74,23 +73,39 @@
         
         $(".logos").bind('click',function(){location.reload();});
         $(".person").bind('click',function(){$(this).toggleClass("active");});
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-          if (!event.target.matches('.dropbtn')) {
 
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-              var openDropdown = dropdowns[i];
-              if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-              }
-            }
-          }
-        }  
-        
+				function classFunction() {
+				    document.getElementById("classDropdown").classList.toggle("show");
+				}
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+
+				    var dropdowns = document.getElementsByClassName("class-content");
+				    var i;
+				    for (i = 0; i < dropdowns.length; i++) {
+				      var openDropdown = dropdowns[i];
+				      if (openDropdown.classList.contains('show')) {
+				        openDropdown.classList.remove('show');
+				      }
+				    }
+				  }
+				}
+				function timeFunction() {
+				    document.getElementById("timeDropdown").classList.toggle("show");
+				}
+				window.onclick = function(event) {
+				  if (!event.target.matches('.dropbtn')) {
+
+				    var dropdowns = document.getElementsByClassName("time-content");
+				    var i;
+				    for (i = 0; i < dropdowns.length; i++) {
+				      var openDropdown = dropdowns[i];
+				      if (openDropdown.classList.contains('show')) {
+				        openDropdown.classList.remove('show');
+				      }
+				    }
+				  }
+				}
     </script>
 
 </body>
