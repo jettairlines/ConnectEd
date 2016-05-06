@@ -11,7 +11,7 @@
 
       <div>
         <label for=password>Password</label>
-        <input type="password"/>
+        <input type="password" name="pw"/>
       </div>
 
         <a id="toSchool" href="#">Are you a school administrator?</a>
@@ -30,11 +30,12 @@
 
 <script>
        $("#toSignup2").click(function(){
-            $("#left").load("signup.html");
-//            var email = $("label[for='workEmail']").val();
-//            var pw = $("label[for=password]").val();
-           $("label[for='workEmail']").val("blah");
-//            alert( $("label[for='workEmail']").val());
+           var email = $("input[name='workEmail']").val();
+           var pw = $("input[name='pw']").val();
+            $("#left").load("signup.html",function(){
+                $("input[name='workEmail']").val(email);
+                $("input[name='pw']").val(pw);
+            });
         });
     
     $("#toSchool").click(function(){
