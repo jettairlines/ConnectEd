@@ -43,19 +43,27 @@
 
 </form>
 
-<script type="text/javascript">
+
+<script type="text/javascript">    
     $("#calendarDemo").multiDatesPicker({
 	   beforeShowDay: $.datepicker.noWeekends,
         minDate: 0,
 	   maxDate: 60
     });
     
+    var sugg = ['Economics','Finance', 'Law']
+    var time= ["May 10","May 11","May 12"]
+    
     $("#toSignup3").click(function(){
-        $("#left").load("done.html");
+        var subject = $("input[name='passion']").val();
+        $("#left").load("done.html",function(){
+            
+            $(this).append("<h4>You've been matched wit a school!</h4><p>Here's your schedule.</p><h5>Subject</h5><p>"+subject+"</p><h5>Time</h5><p>"+time[Math.round(Math.random()*2)]+"</p><button onclick='location.href=&quot;/&quot;';>OK</button>");
+            
+        });
         $("#right img").replaceWith(makeImg("mail"));
     });
     
-  var sugg = ['Computers', 'Economics', 'Horticulture', 'Finance', 'Geology', 'Chemistry', 'Design']
 
   var options = '';
 

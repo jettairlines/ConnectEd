@@ -33,30 +33,31 @@
         <div>
             <h4>Filter</h4>
             <div id="select">
-							<div class="classes">
-								<label for='classDropdown'>Class</label>
-							  <button onclick="classFunction()" class="dropbtn">+</button>
-							  <div id="classDropdown" class="dropdown-content">
-							    <a href="#">Economics</a>
-							    <a href="#">Law</a>
-							    <a href="#">Engineering</a>
-							  </div>
-							</div>
-							<div id="select">
-								<div class="times">
-									<label for='timeDropdown'>Time</label>
-								  <button onclick="timeFunction()" class="dropbtn">+</button>
-								  <div id="timeDropdown" class="dropdown-content">
-								    <a href="#">Morning</a>
-								    <a href="#">Afternoon</a>
-								    <a href="#">Evening</a>
-								  </div>
-								</div>
-							</div>
+                <div class="classes">
+                    <label for='classDropdown'>Class</label>
+                  <button onclick="classFunction()" class="dropbtn">+</button>
+                  <div id="classDropdown" class="dropdown-content">
+                    <a href="#">Economics</a>
+                    <a href="#">Law</a>
+                    <a href="#">Engineering</a>
+                  </div>
+                </div>
+                <div id="select">
+                    <div class="times">
+                        <label for='timeDropdown'>Time</label>
+                      <button onclick="timeFunction()" class="dropbtn">+</button>
+                      <div id="timeDropdown" class="dropdown-content">
+                        <a href="#">May 10</a>
+                        <a href="#">May 11</a>
+                        <a href="#">May 12</a>
+                      </div>
+                    </div>
+                </div>
             </div>
             <div id="content">
                 
             </div>
+            <button class="bluebtn" onclick="mail()">Connect</button>
         </div>
 
     </div>
@@ -68,46 +69,63 @@
      <script  type="text/javascript" src="/static/js/data.js"></script>
 
     <script type="text/javascript">
+        function mail(){
+            window.location.href = "mailto:user@example.com?subject=Subject&body=message%20goes%20here";
+        }
+        
+        populate();
+        $('.dropdown-content>a').bind('click',function(){
+            populate($(this).text());
+        })
+        
         //populate
-        people.forEach(function(e){
-            $('#content').append("<div class='person'><p>"+e['name']+"</p><p>"+e['company']+"</p>");
-        });
+        function populate(filter=null){
+            $('#content').html('');
+            people.forEach(function(e){
+                if(filter)
+                    if(e['time'] != filter && e['subject'] != filter)
+                        return;
+                 $('#content').append("<div class='person'><p>"+e['name']+"</p><p>"+e['company']+"</p>");
+            });
+            $(".person").bind('click',function(){$(this).toggleClass("active");});
+        }
+        
         
         $(".logos").bind('click',function(){location.reload();});
         $(".person").bind('click',function(){$(this).toggleClass("active");});
 
-				function classFunction() {
-				    document.getElementById("classDropdown").classList.toggle("show");
-				}
-				window.onclick = function(event) {
-				  if (!event.target.matches('.dropbtn')) {
+        function classFunction() {
+            document.getElementById("classDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
 
-				    var dropdowns = document.getElementsByClassName("class-content");
-				    var i;
-				    for (i = 0; i < dropdowns.length; i++) {
-				      var openDropdown = dropdowns[i];
-				      if (openDropdown.classList.contains('show')) {
-				        openDropdown.classList.remove('show');
-				      }
-				    }
-				  }
-				}
-				function timeFunction() {
-				    document.getElementById("timeDropdown").classList.toggle("show");
-				}
-				window.onclick = function(event) {
-				  if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("class-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        function timeFunction() {
+            document.getElementById("timeDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
 
-				    var dropdowns = document.getElementsByClassName("time-content");
-				    var i;
-				    for (i = 0; i < dropdowns.length; i++) {
-				      var openDropdown = dropdowns[i];
-				      if (openDropdown.classList.contains('show')) {
-				        openDropdown.classList.remove('show');
-				      }
-				    }
-				  }
-				}
+            var dropdowns = document.getElementsByClassName("time-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
     </script>
 
 </body>

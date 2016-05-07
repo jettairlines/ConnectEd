@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-h4 {
+h4, h5 {
   font-weight: 700; }
 
 body {
@@ -89,6 +89,15 @@ nav.min {
       left: 0;
       background-image: linear-gradient(to top, #607D8B, rgba(0, 0, 0, 0.2)); }
 
+.bluebtn, #view #left button {
+  background: #607D8B;
+  border-radius: 2px;
+  color: white;
+  padding: 2% 5% 2% 5%;
+  border: 0;
+  float: right;
+  clear: both; }
+
 #view {
   position: relative; }
   #view #left {
@@ -100,14 +109,6 @@ nav.min {
     width: 55%;
     background-color: #B3E5FC;
     border-radius: 0 5px 5px 0; }
-    #view #left button {
-      background: #607D8B;
-      border-radius: 2px;
-      color: white;
-      padding: 2% 5% 2% 5%;
-      border: 0;
-      float: right;
-      clear: both; }
   #view #right {
     position: absolute;
     right: 0;
@@ -210,5 +211,42 @@ nav.min {
         color: grey; }
     #view2 #content .active {
       background: #B3E5FC; }
+
+/* Dropdown Button */
+.dropbtn {
+  border: none;
+  cursor: pointer; }
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
